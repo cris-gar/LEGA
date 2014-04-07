@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script>
+
+            function mostrar_input() {
+                var anos_carrera = document.getElementById("cantidad_anos").value;
+                anos_carrera = anos_carrera * 2;
+                $("#semestre").val(anos_carrera);
+            }
+            var nextinput = 0;
+            function AgregarCampos() {
+                nextinput++;
+                campo = '<li id="rut' + nextinput + '">Campo:<input type="text" size="20" id="campo' + nextinput + '"  name="campo' + nextinput + '"  /></li>';
+                $("#campos").append(campo);
+                $("#test").val(nextinput);
+            }
+            $(document).ready(function()
+            {
+                var contador_semestre = 1;
+                $("#button1").click(function() {
+                    contador_semestre++;
+                    var object = $("#test").val();
+                    localStorage.setItem('key' + contador_semestre, object);
+
+                    //alert("koko");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <select name="cantidad_anos" id="cantidad_anos">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <button type="button" onclick="mostrar_input()">cargar</button>
+        <form name="form" method="post">
+            <a href="#" onclick="AgregarCampos();">Agregar Campos</a>
+            <div id="campos">
+            </div>
+            <input type="button" id="button1" value="enviar">
+        </form>
+        <div>
+            <input type="hidden" name="test" id="test" value="1">
+            <input type="hidden" id="semestre" value="">
+        </div>
+    </body>
+</html>
