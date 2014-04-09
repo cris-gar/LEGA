@@ -1,62 +1,116 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <link href="public/css/bootstrap.css"
+              rel="stylesheet" type="text/css" media="all" />
+        <script type="text/javascript" src="public/js/jquery-2.0.3.min.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
         <script>
-
-            function mostrar_input() {
-                var anos_carrera = document.getElementById("cantidad_anos").value;
-                anos_carrera = anos_carrera * 2;
-                $("#semestre").val(anos_carrera);
+            function mandar() {
+                window.location.href = "Notas.html";
             }
-            var nextinput = 0;
-            function AgregarCampos() {
-                nextinput++;
-                campo = '<li id="rut' + nextinput + '">Campo:<input type="text" size="20" id="campo' + nextinput + '"  name="campo' + nextinput + '"  /></li>';
-                $("#campos").append(campo);
-                $("#test").val(nextinput);
-            }
-            $(document).ready(function()
-            {
-                var contador_semestre = 1;
-                $("#button1").click(function() {
-                    contador_semestre++;
-                    var object = $("#test").val();
-                    localStorage.setItem('key' + contador_semestre, object);
-
-                    //alert("koko");
-                });
-            });
         </script>
     </head>
     <body>
-        <div>TODO write content</div>
-        <select name="cantidad_anos" id="cantidad_anos">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-        </select>
-        <button type="button" onclick="mostrar_input()">cargar</button>
-        <form name="form" method="post">
-            <a href="#" onclick="AgregarCampos();">Agregar Campos</a>
-            <div id="campos">
-            </div>
-            <input type="button" id="button1" value="enviar">
-        </form>
-        <div>
-            <input type="hidden" name="test" id="test" value="1">
-            <input type="hidden" id="semestre" value="">
+        <div class="bs-example">
+            <nav id="myNavbar" class="navbar navbar-custom" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand">LEGA</a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="mallaacademica.html">Malla Academica</a></li>
+                        </ul>
+
+
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </nav>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered ">
+                <tbody>
+                    <tr class="active">
+                        <th>Prueba1</th>
+                        <th>Prueba2</th>
+                        <th>Prueba3</th>
+                        <th>Prueba4</th>
+                        <th>Prueba5</th>
+                        <th>Prueba6</th>
+                        <th>Prueba7</th>
+                        <th>Prueba8</th>
+                        <th>Prueba9</th>
+                        <th>Prueba10</th>
+                    </tr>
+                    <tr>
+                        <th class="success" onclick="">
+                            <button type="button" onclick="mandar()" class="btn btn-success btn-lg" value="">Ramo 1</button>
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th class="success" onclick="">
+                            <button type="button" class="btn btn-success btn-lg">Ramo 1</button>
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th class="success" onclick="">
+                            <button type="button" class="btn btn-success btn-lg">Ramo 1</button>
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th class="success" onclick="">
+                            <button type="button" class="btn btn-success btn-lg">Ramo 1</button>
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th class="success" onclick="">
+                            <button type="button" class="btn btn-success btn-lg">Ramo 1</button>
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th class="success" onclick="">
+                            <button type="button" class="btn btn-success btn-lg">Ramo 1</button>
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                </tbody>
+            </table>
         </div>
     </body>
 </html>
