@@ -1,9 +1,9 @@
 {
-  "name": "My App",
+  "name": "Lehrplan",
   "description": "My elevator pitch goes here",
   "launch_path": "/",
   "icons": {
-    "128": "/img/icon-128.png"
+    "128": "/public/img/icono-acreditaciones-2.png"
   },
   "developer": {
     "name": "Your name or organization",
