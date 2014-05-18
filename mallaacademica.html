@@ -13,11 +13,6 @@ and open the template in the editor.
               rel="stylesheet" type="text/css" media="all" />
         <script type="text/javascript" src="public/js/jquery-2.0.3.min.js"></script>
         <script src="public/js/bootstrap.min.js"></script>
-        <script type = "text/javascript" src = "public/js/pouchdb-2.2.0.min.js">
-        </script>
-        <script type = "text/javascript" src="public/js/jquery.indexeddb.js">
-        </script>
-        <script type = "text/javascript" src = "public/js/cargadeDB.js"></script>
         <script>
             var static = 0;
             var i = 1;
@@ -25,40 +20,28 @@ and open the template in the editor.
             function llevar() {
                 var singleValues = $("#cantidad_anos").val() * 2;
                 localStorage.setItem("cantidadSemestre", singleValues);
-                producirformulario(singleValues);
+                //producirformulario(singleValues);
+                document.getElementById('form_account').style.display = 'block';
                 //document.write('valor de single:'+singleValues);
 
             }
-            function producirformulario(cantidadaproducir) {
-                if (cantidadaproducir != 0) {
-                    $form = $("<br><form id='form_account' class='form-horizontal' role='form'></form>");
-                    $form.append('<div class="form-group"><label class="col-xs-3 control-label">RAMO: </label><div class="col-xs-6"><input type="text" name="primerramo" id="primerramo" placeholder="Nombre del Primer ramo" class="form-control"/></div></div>');
-                    $form.append('<div class="form-group"><label class="col-xs-3 control-label">RAMO: </label><div class="col-xs-6"><input type="text" name="segundoramo" id="segundoramo" placeholder="Nombre del Segundo ramo" class="form-control"/></div></div>');
-                    $form.append('<div class="form-group"><label class="col-xs-3 control-label"></label><div class="col-xs-6"><input type="button" class="btn btn-primary" value="Guardar" onclick="test()"/></div></div>');
-                    $('body').append($form);
-                }
-                else {
 
-                }
-            }
             function test() {
-                var Semestre = $("#primerramo").val();
-                   alert(Semestre.value);
+                var Semestre = document.getElementById('primerramo').value;
+                //alert(Semestre);
                 var static2 = localStorage.getItem("cantidadSemestre");
-                
-                if (static < (parseInt(static2) - parseInt(contadorParaRestarSemestres))) {
-                    
-                 
 
+                if (static <= (parseInt(static2) - parseInt(contadorParaRestarSemestres))) {
                     //document.write(JSON.stringify(db.get('test')));
-                    var test = {Ramo1: "" + Semestre.value + "", test2: "thing2", test3: [0, 2, 44]};
+                    var test = {Ramo1: "" + Semestre + "", test2: "thing2", test3: [0, 2, 44]};
                     localStorage.setItem(i, JSON.stringify(test));
                     alert(JSON.stringify(test));
                     //db.get(i, function(err, doc) {});
                     contadorParaRestarSemestres++;
                     i++;
                     $('#form_account')[0].reset();
-                } else {
+                }
+                else {
                     window.location.href = "./index.html";
                 }
             }
@@ -106,5 +89,24 @@ and open the template in the editor.
                 <button onclick="llevar()" name="llenar" class="btn btn-primary">Llenar</button>
             </div>
         </div>
+        <form id='form_account' class='form-horizontal' role='form' style="display:none">
+            <div class="form-group">
+                <label class="col-xs-3 control-label">RAMO: </label>
+                <div class="col-xs-6">
+                    <input type="text" name="primerramo" id="primerramo" placeholder="Nombre del Primer ramo" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label">RAMO: </label>
+                <div class="col-xs-6">
+                    <input type="text" name="segundoramo" id="segundoramo" placeholder="Nombre del Segundo ramo" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label"></label>
+                <div class="col-xs-6"><input type="button" class="btn btn-primary" value="Guardar" onclick="test()"/>
+                </div>
+            </div>
+        </form>
     </body>
 </html>
