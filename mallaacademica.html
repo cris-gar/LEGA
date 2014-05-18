@@ -13,6 +13,57 @@ and open the template in the editor.
               rel="stylesheet" type="text/css" media="all" />
         <script type="text/javascript" src="public/js/jquery-2.0.3.min.js"></script>
         <script src="public/js/bootstrap.min.js"></script>
+        <script type = "text/javascript" src = "public/js/pouchdb-2.2.0.min.js">
+        </script>
+        <script type = "text/javascript" src="public/js/jquery.indexeddb.js">
+        </script>
+        <script type = "text/javascript" src = "public/js/cargadeDB.js"></script>
+        <script>
+            var static = 0;
+            var i = 1;
+            var contadorParaRestarSemestres = 1;
+            function llevar() {
+                var singleValues = $("#cantidad_anos").val() * 2;
+                localStorage.setItem("cantidadSemestre", singleValues);
+                producirformulario(singleValues);
+                //document.write('valor de single:'+singleValues);
+
+            }
+            function producirformulario(cantidadaproducir) {
+                if (cantidadaproducir != 0) {
+                    $form = $("<br><form id='form_account' class='form-horizontal' role='form'></form>");
+                    $form.append('<div class="form-group"><label class="col-xs-3 control-label">RAMO: </label><div class="col-xs-6"><input type="text" name="primerramo" id="primerramo" placeholder="Nombre del Primer ramo" class="form-control"/></div></div>');
+                    $form.append('<div class="form-group"><label class="col-xs-3 control-label">RAMO: </label><div class="col-xs-6"><input type="text" name="segundoramo" id="segundoramo" placeholder="Nombre del Segundo ramo" class="form-control"/></div></div>');
+                    $form.append('<div class="form-group"><label class="col-xs-3 control-label"></label><div class="col-xs-6"><input type="button" class="btn btn-primary" value="Guardar" onclick="test()"/></div></div>');
+                    $('body').append($form);
+                }
+                else {
+
+                }
+            }
+            function test() {
+                var Semestre = $("#primerramo").val();
+                   alert(Semestre.value);
+                var static2 = localStorage.getItem("cantidadSemestre");
+                
+                if (static < (parseInt(static2) - parseInt(contadorParaRestarSemestres))) {
+                    
+                 
+
+                    //document.write(JSON.stringify(db.get('test')));
+                    var test = {Ramo1: "" + Semestre.value + "", test2: "thing2", test3: [0, 2, 44]};
+                    localStorage.setItem(i, JSON.stringify(test));
+                    alert(JSON.stringify(test));
+                    //db.get(i, function(err, doc) {});
+                    contadorParaRestarSemestres++;
+                    i++;
+                    $('#form_account')[0].reset();
+                } else {
+                    window.location.href = "./index.html";
+                }
+            }
+        </script>
+
     </head>
     <body>
         <div class="bs-example">
@@ -38,14 +89,22 @@ and open the template in the editor.
                 </div>
             </nav>
         </div>
-
-        <label>Cantidad de años</label> <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>            
-            <option value="6">6</option>
-        </select>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <label>Cantidad de años</label> 
+                <select id="cantidad_anos" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>            
+                    <option value="6">6</option>
+                </select>
+            </div>
+            <div class="col-xs-4 col-xs-offset-3">
+                <br>
+                <button onclick="llevar()" name="llenar" class="btn btn-primary">Llenar</button>
+            </div>
+        </div>
     </body>
 </html>
