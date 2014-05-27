@@ -11,41 +11,6 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="public/css/bootstrap.css"
               rel="stylesheet" type="text/css" media="all" />
-        <script type="text/javascript" src="public/js/jquery-2.0.3.min.js"></script>
-        <script src="public/js/bootstrap.min.js"></script>
-        <script>
-            var static = 0;
-            var i = 1;
-            var contadorParaRestarSemestres = 1;
-            function llevar() {
-                var singleValues = $("#cantidad_anos").val() * 2;
-                localStorage.setItem("cantidadSemestre", singleValues);
-                //producirformulario(singleValues);
-                document.getElementById('form_account').style.display = 'block';
-                //document.write('valor de single:'+singleValues);
-
-            }
-
-            function test() {
-                var Semestre = document.getElementById('primerramo').value;
-                //alert(Semestre);
-                var static2 = localStorage.getItem("cantidadSemestre");
-
-                if (static <= (parseInt(static2) - parseInt(contadorParaRestarSemestres))) {
-                    //document.write(JSON.stringify(db.get('test')));
-                    var test = {Ramo1: "" + Semestre + "", test2: "thing2", test3: [0, 2, 44]};
-                    localStorage.setItem(i, JSON.stringify(test));
-                    alert(JSON.stringify(test));
-                    //db.get(i, function(err, doc) {});
-                    contadorParaRestarSemestres++;
-                    i++;
-                    $('#form_account')[0].reset();
-                }
-                else {
-                    window.location.href = "./index.html";
-                }
-            }
-        </script>
 
     </head>
     <body>
@@ -86,9 +51,10 @@ and open the template in the editor.
             </div>
             <div class="col-xs-4 col-xs-offset-3">
                 <br>
-                <button onclick="llevar()" name="llenar" class="btn btn-primary">Llenar</button>
+                <button id="llevar" name="llenar" class="btn btn-primary">Llenar</button>
             </div>
         </div>
+        <br>
         <form id='form_account' class='form-horizontal' role='form' style="display:none">
             <div class="form-group">
                 <label class="col-xs-3 control-label">RAMO: </label>
@@ -104,9 +70,13 @@ and open the template in the editor.
             </div>
             <div class="form-group">
                 <label class="col-xs-3 control-label"></label>
-                <div class="col-xs-6"><input type="button" class="btn btn-primary" value="Guardar" onclick="test()"/>
+                <div class="col-xs-6"><input type="button" id="llenar_malla" class="btn btn-primary" value="Guardar"/>
                 </div>
             </div>
         </form>
+
+        <script src="public/js/jquery.1.10.2-min.js"></script>
+        <script src="public/js/funciones.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
     </body>
 </html>
