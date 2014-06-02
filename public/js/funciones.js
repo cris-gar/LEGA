@@ -13,22 +13,30 @@ function llevar() {
     localStorage.setItem("cantidadSemestre", singleValues);
     //alert(localStorage.getItem("cantidadSemestre"));
     document.getElementById('form_account').style.display = 'block';
+    document.getElementById("cualsemestre").innerHTML = "Asignaturas del semestre " + i;
 }
 
 function test() {
-    var Semestre = document.getElementById('primerramo').value;
+    var Ramo1 = document.getElementById('primerramo').value;
+    var Ramo2 = document.getElementById('segundoramo').value;
+    var Ramo3 = document.getElementById('tercerramo').value;
+    var Ramo4 = document.getElementById('cuartoramo').value;
+    var Ramo5 = document.getElementById('quintoramo').value;
+    var Ramo6 = document.getElementById('sextoramo').value;
     //alert(Semestre);
     var static2 = localStorage.getItem("cantidadSemestre");
 
+
     if (static <= (parseInt(static2) - parseInt(contadorParaRestarSemestres))) {
         //document.write(JSON.stringify(db.get('test')));
-        var test = {Ramo1: "" + Semestre + "", test2: "thing2", test3: [0, 2, 44]};
+        var test = {Ramo1: "" + Ramo1 + "", Ramo2: "" + Ramo2 + "", Ramo3: "" + Ramo3 + "", Ramo4: "" + Ramo4 + "", Ramo5: "" + Ramo5 + "", Ramo6: "" + Ramo6 + ""};
         localStorage.setItem(i, JSON.stringify(test));
         alert(JSON.stringify(test));
         //db.get(i, function(err, doc) {});
         contadorParaRestarSemestres++;
         i++;
         $('#form_account')[0].reset();
+        document.getElementById("cualsemestre").innerHTML = "Asignaturas del semestre " + i;
     }
     else {
         window.location.href = "./index.html";
