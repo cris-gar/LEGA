@@ -31,7 +31,7 @@ and open the template in the editor.
                     <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li>
-                                <a href="ConfigurarNotas.html">Configurar Notas</a>
+                                <a href="#" id="configurar">Configurar Notas</a>
                                 <a href="Especificaciones.html">Especificaciones</a>
                             </li>
                         </ul>
@@ -43,20 +43,13 @@ and open the template in the editor.
                 </div>
             </nav>
         </div>
-        <div class="col-md-2">
-            <div class="input-group">
-                <input type="text" class="">
-                <div class="input-group-btn">
-                    <!-- Button and dropdown menu -->
-                    <select class="selectpicker ">
-                        <option>15</option>
-                        <option>25</option>
-                        <option>35</option>
-                    </select>
-                </div>
+        <form id='form_account' class='form-horizontal' role='form'>
+            <div id="Notas">
             </div>
+        </form>
+        <div>
+            <input type="hidden" id="oculto">
         </div>
-
         <script type="text/javascript" src="public/js/jquery-2.0.3.min.js"></script>
         <script src="public/js/jquery.1.10.2-min.js"></script>
         <script src="public/js/notas.js"></script>

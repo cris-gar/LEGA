@@ -3,12 +3,13 @@
   "description": "My elevator pitch goes here",
   "launch_path": "/index.html",
   "developer": {
-    "name": "Your name or organization",
-    "url": "http://your-homepage-here.org"
+    "name": "Cristian Garrido",
+    "url": ""
   },
   "type": "privileged",
   "icons": {
     "128": "/public/img/icono-acreditaciones-2.png"
+    "64": "/public/img/icono-acreditaciones-64px.png"
   },
   "orientation": "portrait-primary",
   "permissions": {

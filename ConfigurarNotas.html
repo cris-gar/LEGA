@@ -11,8 +11,6 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="public/css/bootstrap.css"
               rel="stylesheet" type="text/css" media="all" />
-        <script type="text/javascript" src="public/js/jquery-2.0.3.min.js"></script>
-        <script src="public/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="bs-example">
@@ -38,30 +36,43 @@ and open the template in the editor.
                 </div>
             </nav>
         </div>
-
-        <label>Cantidad de Notas</label>  <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>            
-        </select>
         <!-- Estos imput estaran ocultos hasta escojer la cantidad de notas -->
 
-        <div class="row">
-            <div class="col-md-2">
-                <input type="text" class="form-control">
+        <form id='form_account' class='form-horizontal' role='form'>
+            <div id="espesificaciones_notas">
             </div>
-        </div><br>
-        <div class="row">
-            <div class="col-md-2">
-                <input type="text" class="form-control">
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Ingrese la cantidad de Notas</label>
+                <div class="col-xs-6">
+                    <input type="number" name="cantidad_notas" id="cantidad_notas" placeholder="Cantidad de Notas del Ramo" class="form-control">
+                </div>
             </div>
-        </div><br>
-        <div class="row">
-            <div class="col-md-2">
-                <input type="text" class="form-control">
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Nota minima para aprobar </label>
+                <div class="col-xs-6">
+                    <input type="number" name="nota_minima" id="nota_minima" placeholder="Nota minima para aprobar" class="form-control"/>
+                </div>
             </div>
-        </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Nota minima para rendir examen </label>
+                <div class="col-xs-6">
+                    <input type="number" name="nota_minima_examen" id="nota_minima_examen" placeholder="Nota minima para dar examen" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-6">
+                    <input type="hidden" id="oculto_carrera" class="btn btn-primary" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label"></label>
+                <div class="col-xs-6"><input type="button" id="llenar_Especificacion_Notas" class="btn btn-primary" value="Guardar"/>
+                </div>
+            </div>
+
+        </form>
+        <script src="public/js/jquery.1.10.2-min.js"></script>
+        <script src="public/js/configuracion_notas.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
     </body>
 </html>
