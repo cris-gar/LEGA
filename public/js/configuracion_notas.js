@@ -28,6 +28,6 @@ registerBtn.addEventListener('click', function() {
     var Carrera = document.getElementById('oculto_carrera').value;
 
     var configuracion_notas = {Cantidad_Notas: "" + Cantidad_Notas + "", Nota_Minima_Aprobar: "" + Nota_Minima_Aprobar + "", Nota_Minima_Examen: "" + Nota_Minima_Examen + ""};
-    localStorage.setItem("Notas_" + Carrera, JSON.stringify(configuracion_notas));
+    localStorage.setItem("Especifico_Notas_" + Carrera, JSON.stringify(configuracion_notas));
     window.location.href = "./Notas.html?carrera=" + Carrera;
 });
