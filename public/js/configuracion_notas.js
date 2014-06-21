@@ -31,3 +31,9 @@ registerBtn.addEventListener('click', function() {
     localStorage.setItem("Especifico_Notas_" + Carrera, JSON.stringify(configuracion_notas));
     window.location.href = "./Notas.html?carrera=" + Carrera;
 });
+
+var Boton_Volver_Configurar_Notas = document.getElementById('configurar_notas');
+
+Boton_Volver_Configurar_Notas.addEventListener('click', function() {
+    window.location.href = "./Notas.html?carrera=" + document.getElementById('oculto_carrera').value;
+});

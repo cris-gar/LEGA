@@ -8,7 +8,7 @@
   },
   "type": "privileged",
   "icons": {
-    "128": "/public/img/icono-acreditaciones-2.png"
+    "128": "/public/img/icono-acreditaciones-2.png",
     "64": "/public/img/icono-acreditaciones-64px.png"
   },
   "orientation": "portrait-primary",

@@ -11,8 +11,6 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="public/css/bootstrap.css"
               rel="stylesheet" type="text/css" media="all" />
-        <script type="text/javascript" src="public/js/jquery-2.0.3.min.js"></script>
-        <script src="public/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="bs-example">
@@ -31,15 +29,40 @@ and open the template in the editor.
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="Notas.html">Volver</a></li>
+                            <li><a href="#" id="volver_notas">Volver</a></li>
                         </ul>
 
                     </div><!-- /.navbar-collapse -->
                 </div>
             </nav>
         </div>
-        
-        <label>Profesor</label>
-        <input type="text">
+        <form id='form_account' class='form-horizontal' role='form'>
+            <div id="espesificaciones_notas">
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Nombre del Profesor</label>
+                <div class="col-xs-6">
+                    <input type="text" name="profesor" id="profesor" placeholder="Nombre del Profesor" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Sala del Ramo</label>
+                <div class="col-xs-6">
+                    <input type="text" name="sala" id="sala" placeholder="Sala del Ramo" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label"></label>
+                <div class="col-xs-6"><input type="button" id="llenar_Especificacion_Ramo" class="btn btn-primary" value="Guardar"/>
+                </div>
+            </div>
+        </form>
+        <div>
+            <input type="hidden" id="oculto">
+        </div>
+        <script type="text/javascript" src="public/js/jquery-2.0.3.min.js"></script>
+        <script src="public/js/jquery.1.10.2-min.js"></script>
+        <script src="public/js/especificaciones.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
     </body>
 </html>
