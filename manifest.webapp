@@ -1,6 +1,6 @@
 {
   "name": "Lehrplan",
-  "description": "My elevator pitch goes here",
+  "description": "Lehrplan es una aplicación diseñada para estudiantes de esucación superior, con la cual se podra tener un manejo del plan de estudios y a cada asignatura asignar sus notas y tener un control de estas.",
   "launch_path": "/index.html",
   "developer": {
     "name": "Cristian Garrido",
@@ -9,7 +9,10 @@
   "type": "privileged",
   "icons": {
     "128": "/public/img/icono-acreditaciones-2.png",
-    "64": "/public/img/icono-acreditaciones-64px.png"
+    "64": "/public/img/icono-acreditaciones-64px.png",
+    "48": "/public/img/icono-acreditaciones-48px.png",
+    "32": "/public/img/icono-acreditaciones-32px.png",
+    "16": "/public/img/icono-acreditaciones-16px.png"
   },
   "orientation": "portrait-primary",
   "permissions": {
