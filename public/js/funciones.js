@@ -37,6 +37,10 @@ function test() {
         i++;
         $('#form_account')[0].reset();
         document.getElementById("cualsemestre").innerHTML = "Asignaturas del semestre " + i;
+
+        if (parseInt(static2) < parseInt(contadorParaRestarSemestres)) {
+            window.location.href = "./index.html";
+        }
     }
     else {
         window.location.href = "./index.html";
