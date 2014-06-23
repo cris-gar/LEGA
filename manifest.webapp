@@ -1,6 +1,6 @@
 {
   "name": "Lehrplan",
-  "description": "Lehrplan es una aplicación diseñada para estudiantes de esucación superior, con la cual se podra tener un manejo del plan de estudios y a cada asignatura asignar sus notas y tener un control de estas.",
+  "description": "Lehrplan es una aplicación diseñada para estudiantes de educación superior, con la cual se podrá tener un manejo del plan de estudios y a cada asignatura asignar sus notas y tener un control de estas.",
   "launch_path": "/index.html",
   "developer": {
     "name": "Cristian Garrido",

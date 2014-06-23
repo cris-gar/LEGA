@@ -24,7 +24,7 @@ if (localStorage.getItem('Especifico_Notas_' + document.getElementById('oculto')
         Notas = localStorage.getItem("Notas_" + document.getElementById('oculto').value);
         Notas = JSON.parse(Notas);
         for (i = 1; i <= Especificaciones_Notas.Cantidad_Notas; i++) {
-            $('#Notas').append('<div class="form-group"><label class="col-xs-3 control-label">Nota ' + i + '</label><div class="col-xs-3"><input type="number" name="nota_' + i + '" id="nota_' + i + '" placeholder="Nota minima para dar examen" class="form-control" /></div><div class="col-xs-3"><input type="number" name="porcentaje_' + i + '" id="porcentaje_' + i + '" placeholder="Porcentaje" class="form-control" value=""/></div></div>');
+            $('#Notas').append('<div class="form-group"><label class="col-xs-3 control-label">Nota ' + i + '</label><div class="col-xs-3"><input type="number" name="nota_' + i + '" id="nota_' + i + '" placeholder="Nota minima para dar examen" class="form-control" /></div><label class="col-xs-3 control-label">Porcentaje</label><div class="col-xs-3"><input type="number" name="porcentaje_' + i + '" id="porcentaje_' + i + '" placeholder="%" class="form-control" value=""/></div></div>');
             document.getElementById('nota_' + i + '').value = Notas['nota_' + i];
             document.getElementById('porcentaje_' + i + '').value = Notas["porcentaje_" + i] * 100;
         }
@@ -61,7 +61,7 @@ if (localStorage.getItem('Especifico_Notas_' + document.getElementById('oculto')
         Especificaciones_Notas = localStorage.getItem('Especifico_Notas_' + document.getElementById('oculto').value);
         Especificaciones_Notas = JSON.parse(Especificaciones_Notas);
         for (i = 1; i <= Especificaciones_Notas.Cantidad_Notas; i++) {
-            $('#Notas').append('<div class="form-group"><label class="col-xs-3 control-label">Nota ' + i + '</label><div class="col-xs-3"><input type="number" name="nota_' + i + '" id="nota_' + i + '" placeholder="Nota minima para dar examen" class="form-control"/></div><div class="col-xs-3"><input type="number" name="porcentaje_' + i + '" id="porcentaje_' + i + '" placeholder="Porcentaje" class="form-control"/></div></div>');
+            $('#Notas').append('<div class="form-group"><label class="col-xs-3 control-label">Nota ' + i + '</label><div class="col-xs-3"><input type="number" name="nota_' + i + '" id="nota_' + i + '" placeholder="Nota minima para dar examen" class="form-control"/></div><label class="col-xs-3 control-label">Porcentaje</label><div class="col-xs-3"><input type="number" name="porcentaje_' + i + '" id="porcentaje_' + i + '" placeholder="%" class="form-control"/></div></div>');
         }
         $('#Notas').append('<div class="form-group"><label class="col-xs-5 control-label"></label><div class="col-xs-6"><input type="button" id="llenar_Especificacion_Notas" class="btn btn-primary" value="Guardar"/></div></div>');
         var Resultado_Notas = document.getElementById('llenar_Especificacion_Notas');
