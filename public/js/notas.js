@@ -34,9 +34,9 @@ if (localStorage.getItem('Especifico_Notas_' + document.getElementById('oculto')
         var NOTAs = {};
         Resultado_Notas.addEventListener('click', function() {
             for (j = 1; j <= Especificaciones_Notas.Cantidad_Notas; j++) {
-                NOTAs["nota_" + j + ""] = parseInt(document.getElementById("nota_" + j + "").value);
-                NOTAs["porcentaje_" + j + ""] = parseInt(document.getElementById("porcentaje_" + j + "").value) / 100;
-                Resultado_porcentaje = parseInt(document.getElementById("nota_" + j + "").value) * (parseInt(document.getElementById("porcentaje_" + j + "").value) / 100);
+                NOTAs["nota_" + j + ""] = parseFloat(document.getElementById("nota_" + j + "").value);
+                NOTAs["porcentaje_" + j + ""] = parseFloat(document.getElementById("porcentaje_" + j + "").value) / 100;
+                Resultado_porcentaje = parseFloat(document.getElementById("nota_" + j + "").value) * (parseFloat(document.getElementById("porcentaje_" + j + "").value) / 100);
                 Sumatoria_Notas = Sumatoria_Notas + Resultado_porcentaje;
             }
             NOTAs["nota_final"] = Sumatoria_Notas;
@@ -47,13 +47,13 @@ if (localStorage.getItem('Especifico_Notas_' + document.getElementById('oculto')
         Nota = localStorage.getItem("Notas_" + document.getElementById('oculto').value);
         Nota = JSON.parse(Nota);
         document.getElementById('nota_pasar').innerHTML = "Tu nota minima para pasar es: " + Especificaciones_Notas.Nota_Minima_Aprobar;
-        if (Nota.nota_final >= parseInt(Especificaciones_Notas.Nota_Minima_Aprobar)) {
+        if (Nota.nota_final >= parseFloat(Especificaciones_Notas.Nota_Minima_Aprobar)) {
             document.getElementById('comentario').innerHTML = "Felicitaciones actualmente estas pasando con un: " + Nota.nota_final;
         }
-        if (Nota.nota_final >= parseInt(Especificaciones_Notas.Nota_Minima_Examen) && Nota.nota_final < parseInt(Especificaciones_Notas.Nota_Minima_Aprobar)) {
+        if (Nota.nota_final >= parseFloat(Especificaciones_Notas.Nota_Minima_Examen) && Nota.nota_final < parseFloat(Especificaciones_Notas.Nota_Minima_Aprobar)) {
             document.getElementById('comentario').innerHTML = "Amig@, actualmente tienes que rendir examen con un: " + Nota.nota_final;
         }
-        if (Nota.nota_final < parseInt(Especificaciones_Notas.Nota_Minima_Examen)) {
+        if (Nota.nota_final < parseFloat(Especificaciones_Notas.Nota_Minima_Examen)) {
             document.getElementById('comentario').innerHTML = "Amig@, actualmente estas reprobando con un: " + Nota.nota_final;
         }
     }
@@ -69,9 +69,9 @@ if (localStorage.getItem('Especifico_Notas_' + document.getElementById('oculto')
         var NOTAs = {};
         Resultado_Notas.addEventListener('click', function() {
             for (j = 1; j <= Especificaciones_Notas.Cantidad_Notas; j++) {
-                NOTAs["nota_" + j + ""] = parseInt(document.getElementById("nota_" + j + "").value);
-                NOTAs["porcentaje_" + j + ""] = parseInt(document.getElementById("porcentaje_" + j + "").value) / 100;
-                Resultado_porcentaje = parseInt(document.getElementById("nota_" + j + "").value) * (parseInt(document.getElementById("porcentaje_" + j + "").value) / 100);
+                NOTAs["nota_" + j + ""] = parseFloat(document.getElementById("nota_" + j + "").value);
+                NOTAs["porcentaje_" + j + ""] = parseFloat(document.getElementById("porcentaje_" + j + "").value) / 100;
+                Resultado_porcentaje = parseFloat(document.getElementById("nota_" + j + "").value) * (parseFloat(document.getElementById("porcentaje_" + j + "").value) / 100);
                 Sumatoria_Notas = Sumatoria_Notas + Resultado_porcentaje;
             }
             NOTAs["nota_final"] = Sumatoria_Notas;
@@ -82,13 +82,13 @@ if (localStorage.getItem('Especifico_Notas_' + document.getElementById('oculto')
         Nota = localStorage.getItem("Notas_" + document.getElementById('oculto').value);
         Nota = JSON.parse(Nota);
         document.getElementById('nota_pasar').innerHTML = "Tu nota minima para pasar es: " + Especificaciones_Notas.Nota_Minima_Aprobar;
-        if (Nota.nota_final >= parseInt(Especificaciones_Notas.Nota_Minima_Aprobar)) {
+        if (Nota.nota_final >= parseFloat(Especificaciones_Notas.Nota_Minima_Aprobar)) {
             document.getElementById('comentario').innerHTML = "Felicitaciones actualmente estas pasando con un: " + Nota.nota_final;
         }
-        if (Nota.nota_final >= parseInt(Especificaciones_Notas.Nota_Minima_Examen) && Nota.nota_final < parseInt(Especificaciones_Notas.Nota_Minima_Aprobar)) {
+        if (Nota.nota_final >= parseFloat(Especificaciones_Notas.Nota_Minima_Examen) && Nota.nota_final < parseFloat(Especificaciones_Notas.Nota_Minima_Aprobar)) {
             document.getElementById('comentario').innerHTML = "Amig@, actualmente tienes que rendir examen con un: " + Nota.nota_final;
         }
-        if (Nota.nota_final < parseInt(Especificaciones_Notas.Nota_Minima_Examen)) {
+        if (Nota.nota_final < parseFloat(Especificaciones_Notas.Nota_Minima_Examen)) {
             document.getElementById('comentario').innerHTML = "Amig@, actualmente estas reprobando con un: " + Nota.nota_final;
         }
     }

@@ -8,11 +8,11 @@
   },
   "type": "privileged",
   "icons": {
-    "128": "/public/img/icono-acreditaciones-2.png",
-    "64": "/public/img/icono-acreditaciones-64px.png",
-    "48": "/public/img/icono-acreditaciones-48px.png",
+    "16": "/public/img/icono-acreditaciones-16px.png",
     "32": "/public/img/icono-acreditaciones-32px.png",
-    "16": "/public/img/icono-acreditaciones-16px.png"
+    "48": "/public/img/icono-acreditaciones-48px.png",
+    "64": "/public/img/icono-acreditaciones-64px.png",
+    "128": "/public/img/icono-acreditaciones-2.png"
   },
   "orientation": "portrait-primary",
   "permissions": {
